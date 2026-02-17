@@ -1,24 +1,22 @@
-# Day 2 - Control & Logic
+# Day 2 - Funcntion & Structure
 
-monthly_savings = 1300
-annual_interest_rate = 0.05
-monthly_rate = annual_interest_rate / 12
+def compund_formula(principal, rate, years):
+    amount = principal
+    ratte = rate
 
-months = 300
-month = 1
-total = 0
+    for i in range(years):
+        amount = amount + (amount * ratte)
+        ratte = ratte + 0.02
 
-while month <= months:
-    total = (total + monthly_savings) * (1 + monthly_rate)
+        print("Year", i + 1, "Amount", amount)
 
-    if total >= 100000:
-        print("You have reached your goal in", month, "months!")
-        break
+    return amount
+    
 
-    if month % 12 == 0:
-        print("Year", [month // 12], "Total", round(total, 2))
+result = compund_formula(1000, 0.05, 10)
+    
 
-    month = month + 1
+  
 
    
 
